@@ -1,0 +1,502 @@
+[{
+        "sound": "data/lwl/5481c6fb16094.mp3",
+        "image": "data/lwl/Link-bending-machine-204x136.jpg",
+        "label": "Link bending machine"
+    },
+    {
+        "sound": "data/lwl/55db10d0dc52a.mp3",
+        "image": "data/lwl/Flax-ring-spinning-frame-204x136.jpg",
+        "label": "Flax ring spinning frame"
+    },
+    {
+        "sound": "data/lwl/5485801628fd4.mp3",
+        "image": "data/lwl/Hacksaw-204x136.jpg",
+        "label": "Hacksaw"
+    },
+    {
+        "sound": "data/lwl/549308f747261.mp3",
+        "image": "data/lwl/Hoist-204x136.jpg",
+        "label": "Hoist"
+    },
+    {
+        "sound": "data/lwl/5493106c30355.mp3",
+        "image": "data/lwl/Reiden-204x136.jpg",
+        "label": "“Reider”"
+    },
+    {
+        "sound": "data/lwl/5493142839f85.mp3",
+        "image": "data/lwl/Tool-factory-Krenzer-204x136.jpg",
+        "label": "Forging of hammer heads"
+    },
+    {
+        "sound": "data/lwl/55e6f16cc8976.mp3",
+        "image": "data/lwl/Hot-rolling-204x136.jpg",
+        "label": "Steelwork: Hot rolling"
+    },
+    {
+        "sound": "data/lwl/55e702ac80046.mp3",
+        "image": "data/lwl/Coiler-204x136.jpg",
+        "label": "Steelwork: Coiler"
+    },
+    {
+        "sound": "data/lwl/55e70720edda7.mp3",
+        "image": "data/lwl/Coal-crane-204x136.jpg",
+        "label": "Coal crane"
+    },
+    {
+        "sound": "data/lwl/55e70b1f1fc75.mp3",
+        "image": "data/lwl/Rotary-printing-press-204x136.jpg",
+        "label": "Rotary printing press"
+    },
+    {
+        "sound": "data/lwl/565424e2d0d8a.mp3",
+        "image": "data/lwl/Teleprinter-204x136.jpg",
+        "label": "Teleprinter: typing"
+    },
+    {
+        "sound": "data/lwl/56542c7a4df81.mp3",
+        "image": "data/lwl/Electric-hand-lever-press--204x136.jpg",
+        "label": "Electric hand lever press"
+    },
+    {
+        "sound": "data/lwl/5491496d9c5a9.mp3",
+        "image": "data/lwl/Weaving-machine-G.A.-Rocher-204x136.jpg",
+        "label": "Weaving machine"
+    },
+    {
+        "sound": "data/lwl/5492f63057f18.mp3",
+        "image": "data/lwl/Spring-Hammer-204x136.jpg",
+        "label": "Spring Hammer"
+    },
+    {
+        "sound": "data/lwl/548eb240d4cbd.mp3",
+        "image": "data/lwl/Edmondson-Ticket-Printing-Machine-204x136.jpg",
+        "label": "Edmondson Ticket Printing Machine"
+    },
+    {
+        "sound": "data/lwl/55e6e0d152945.mp3",
+        "image": "data/lwl/Sizing-press-204x136.jpg",
+        "label": "Steelwork: Sizing press"
+    },
+    {
+        "sound": "data/lwl/548e9bea81cfd.mp3",
+        "image": "data/lwl/Prussian-passenger-steam-locomotive-P-8-204x136.jpg",
+        "label": "Prussian passenger steam locomotive P-8"
+    },
+    {
+        "sound": "data/lwl/54807b714cea6.mp3",
+        "image": "data/lwl/Horizontal-waterwheel-204x136.jpg",
+        "label": "Horizontal waterwheel"
+    },
+    {
+        "sound": "data/lwl/54817efc37443.mp3",
+        "image": "data/lwl/Horizontal-gang-saw-204x136.jpg",
+        "label": "Horizontal gang saw"
+    },
+    {
+        "sound": "data/lwl/5481924bad116.mp3",
+        "image": "data/lwl/Francis-turbine-204x136.jpg",
+        "label": "Francis turbine"
+    },
+    {
+        "sound": "data/lwl/5481baae3c7bf.mp3",
+        "image": "data/lwl/Round-rod-milling-machine-204x136.jpg",
+        "label": "Round rod milling machine"
+    },
+    {
+        "sound": "data/lwl/5481c13bc1589.mp3",
+        "image": "data/lwl/Rod-cutter-204x136.jpg",
+        "label": "Rod cutter"
+    },
+    {
+        "sound": "data/lwl/5481c3bc09be8.mp3",
+        "image": "data/lwl/Bending-machine-204x136.jpg",
+        "label": "Bending machine"
+    },
+    {
+        "sound": "data/lwl/5481c9795fd66.mp3",
+        "image": "data/lwl/Chain-bending-machine-204x136.jpg",
+        "label": "Chain bending machine"
+    },
+    {
+        "sound": "data/lwl/548557b52f01b.mp3",
+        "image": "data/lwl/Hand-welding-machine-204x136.jpg",
+        "label": "Hand welding machine"
+    },
+    {
+        "sound": "data/lwl/54855c64348cd.mp3",
+        "image": "data/lwl/Tumbling-barrel-204x136.jpg",
+        "label": "Tumbling barrel"
+    },
+    {
+        "sound": "data/lwl/548568acdd5d9.mp3",
+        "image": "data/lwl/Saw-blade-shrapening-machine-204x136.jpg",
+        "label": "Saw blade sharpening machine"
+    },
+    {
+        "sound": "data/lwl/54857add4aa67.mp3",
+        "image": "data/lwl/Planing-machine-204x136.jpg",
+        "label": "Planing machine"
+    },
+    {
+        "sound": "data/lwl/5485863f6312b.mp3",
+        "image": "data/lwl/Sharpening-machine-Feinpließtbock-204x136.jpg",
+        "label": "Sharpening machine"
+    },
+    {
+        "sound": "data/lwl/54858c2443fcc.mp3",
+        "image": "data/lwl/Sharpening-machine-Blaupließtbock-204x136.jpg",
+        "label": "Sharpening machine (“Blaupließtbock”)"
+    },
+    {
+        "sound": "data/lwl/5485956ac0e06.mp3",
+        "image": "data/lwl/Kessel-sharpening-machine-204x136.jpg",
+        "label": "sharpening machine"
+    },
+    {
+        "sound": "data/lwl/5485bf989f46c.mp3",
+        "image": "data/lwl/Whetting-trestle-204x136.jpg",
+        "label": "Whetting trestle"
+    },
+    {
+        "sound": "data/lwl/5485c3e3ccf38.mp3",
+        "image": "data/lwl/“Schurbock”-polishing-204x136.jpg",
+        "label": "“Schurbock” polishing"
+    },
+    {
+        "sound": "data/lwl/5486a519630db.mp3",
+        "image": "data/lwl/Knife-spine-grinding-machine-204x136.jpg",
+        "label": "Knife-spine grinding machine"
+    },
+    {
+        "sound": "data/lwl/5486b231e9abc.mp3",
+        "image": "data/lwl/Punching-press-204x136.jpg",
+        "label": "Punching press"
+    },
+    {
+        "sound": "data/lwl/5486b8180dd2f.mp3",
+        "image": "data/lwl/Slit-machine-204x136.jpg",
+        "label": "“Slit machine”"
+    },
+    {
+        "sound": "data/lwl/548ea21cec72e.mp3",
+        "image": "data/lwl/Fireman-stoker-at-work-in-a-steam-locomotive-204x136.jpg",
+        "label": "Fireman (stoker) at work in a steam locomotive"
+    },
+    {
+        "sound": "data/lwl/548eab3ea5c96.mp3",
+        "image": "data/lwl/Air-pump-steam-locomotive-204x136.jpg",
+        "label": "Air pump (steam locomotive)"
+    },
+    {
+        "sound": "data/lwl/548eb8b4907c5.mp3",
+        "image": "data/lwl/Railway-turntable-204x136.jpg",
+        "label": "Railway turntable"
+    },
+    {
+        "sound": "data/lwl/548ebd3114eb5.mp3",
+        "image": "data/lwl/Hand-lever-rail-trolley-204x136.jpg",
+        "label": "Hand lever draisine"
+    },
+    {
+        "sound": "data/lwl/548ec19189533.mp3",
+        "image": "data/lwl/Narrow-gauge-field-locomotive-204x136.jpg",
+        "label": "Narrow-gauge field locomotive"
+    },
+    {
+        "sound": "data/lwl/54905356eac8f.mp3",
+        "image": "data/lwl/Cops-Winder-204x136.jpg",
+        "label": "Cops Winder"
+    },
+    {
+        "sound": "data/lwl/54905d3631b02.mp3",
+        "image": "data/lwl/Beaming-machine-204x136.jpg",
+        "label": "Beaming machine"
+    },
+    {
+        "sound": "data/lwl/549195ecc1586.mp3",
+        "image": "data/lwl/Weaving-machine-204x136.jpg",
+        "label": "Weaving machine"
+    },
+    {
+        "sound": "data/lwl/5492e9dd6ab2c.mp3",
+        "image": "data/lwl/Cash-register-204x136.jpg",
+        "label": "Cash register"
+    },
+    {
+        "sound": "data/lwl/5492fc1d46557.mp3",
+        "image": "data/lwl/Coal-mixer-204x136.jpg",
+        "label": "Coal mixer"
+    },
+    {
+        "sound": "data/lwl/549305da8b841.mp3",
+        "image": "data/lwl/Conveyor-belt-204x136.jpg",
+        "label": "Conveyor belt"
+    },
+    {
+        "sound": "data/lwl/5493198782066.mp3",
+        "image": "data/lwl/Steam-locomotive-Anna-204x136.jpg",
+        "label": "Steam locomotive"
+    },
+    {
+        "sound": "data/lwl/54931e55a006f.mp3",
+        "image": "data/lwl/Overhead-monorail-Wuppertal-Suspension-Railway-204x136.jpg",
+        "label": "Overhead monorail (Wuppertal Suspension Railway)"
+    },
+    {
+        "sound": "data/lwl/549322d55c09a.mp3",
+        "image": "data/lwl/Overhead-monorail-Wuppertal-Suspension-Railway-inside-204x136.jpg",
+        "label": "Overhead monorail (Wuppertal Suspension Railway) - inside"
+    },
+    {
+        "sound": "data/lwl/5493fc411996a.mp3",
+        "image": "data/lwl/Mine-telephone-204x136.jpg",
+        "label": "Mine telephone"
+    },
+    {
+        "sound": "data/lwl/55ccbbecb7e3c.mp3",
+        "image": "data/lwl/Time-clockIII-204x136.jpg",
+        "label": "Time clock"
+    },
+    {
+        "sound": "data/lwl/55cda2803963b.mp3",
+        "image": "data/lwl/Washboard_-204x136.jpg",
+        "label": "Washboard"
+    },
+    {
+        "sound": "data/lwl/55d354925d772.mp3",
+        "image": "data/lwl/Carpet-beater-204x136.jpg",
+        "label": "Carpet beater"
+    },
+    {
+        "sound": "data/lwl/55db15f22ac49.mp3",
+        "image": "data/lwl/Jacquard-card-duplicating-machine-204x136.jpg",
+        "label": "Jacquard card duplicating machine"
+    },
+    {
+        "sound": "data/lwl/55dc6dd97b611.mp3",
+        "image": "data/lwl/CTD-204x136.jpg",
+        "label": "Container Terminal at the Port of Dortmund"
+    },
+    {
+        "sound": "data/lwl/55e409ef55c47.mp3",
+        "image": "data/lwl/Coffee-grinder-204x136.jpg",
+        "label": "Coffee grinder"
+    },
+    {
+        "sound": "data/lwl/55e41e5863da1.mp3",
+        "image": "data/lwl/Button-sewing-machine-204x136.jpg",
+        "label": "Button sewing machine"
+    },
+    {
+        "sound": "data/lwl/55e4243f9aa02.mp3",
+        "image": "data/lwl/Button-hole-machine-204x136.jpg",
+        "label": "Button hole machine"
+    },
+    {
+        "sound": "data/lwl/55e42854725ad.mp3",
+        "image": "data/lwl/Embroidery-machine-204x136.jpg",
+        "label": "Embroidery machine"
+    },
+    {
+        "sound": "data/lwl/55e42b5827ee4.mp3",
+        "image": "data/lwl/Braiding-machine-204x136.jpg",
+        "label": "Braiding machine"
+    },
+    {
+        "sound": "data/lwl/55e42df9c7d5d.mp3",
+        "image": "data/lwl/Sizing-and-dyeing-machine-204x136.jpg",
+        "label": "Sizing and dyeing machine"
+    },
+    {
+        "sound": "data/lwl/55e431c2bbb5d.mp3",
+        "image": "data/lwl/Rope-making-machine-204x136.jpg",
+        "label": "Rope making machine"
+    },
+    {
+        "sound": "data/lwl/55e435944c58c.mp3",
+        "image": "data/lwl/Chain-forging-204x136.jpg",
+        "label": "Chain forging"
+    },
+    {
+        "sound": "data/lwl/55e439f33a3bd.mp3",
+        "image": "data/lwl/Kleinlokomotive-204x136.jpg",
+        "label": "Kleinlokomotive - motor"
+    },
+    {
+        "sound": "data/lwl/55e45307c97ed.mp3",
+        "image": "data/lwl/Train-destination-indicator-204x136.jpg",
+        "label": "Train destination indicator"
+    },
+    {
+        "sound": "data/lwl/55e553f4033bf.mp3",
+        "image": "data/lwl/Needle-loom_-204x136.jpg",
+        "label": "Needle loom"
+    },
+    {
+        "sound": "data/lwl/55e57682550dd.mp3",
+        "image": "data/lwl/Loom-204x136.jpg",
+        "label": "Loom"
+    },
+    {
+        "sound": "data/lwl/55e596973ee59.mp3",
+        "image": "data/lwl/Loom1-204x136.jpg",
+        "label": "Loom"
+    },
+    {
+        "sound": "data/lwl/55e5a271cf7cb.mp3",
+        "image": "data/lwl/Pneumatic-pick-204x136.jpg",
+        "label": "Pneumatic pick"
+    },
+    {
+        "sound": "data/lwl/55e5a44a3e762.mp3",
+        "image": "data/lwl/Hammer-drill-204x136.jpg",
+        "label": "Hammer drill"
+    },
+    {
+        "sound": "data/lwl/55e5a6dd6e32f.mp3",
+        "image": "data/lwl/Pneumatic-lamp-204x136.jpg",
+        "label": "Pneumatic lamp"
+    },
+    {
+        "sound": "data/lwl/55e69ebc3cf62.mp3",
+        "image": "data/lwl/Tapping-of-a-blast-furnace-204x136.jpg",
+        "label": "Steelwork: Tapping of a blast furnace"
+    },
+    {
+        "sound": "data/lwl/55e6c337ba3b8.mp3",
+        "image": "data/lwl/Pusher-furnace-204x136.jpg",
+        "label": "Steelwork: Pusher furnace and conveying system"
+    },
+    {
+        "sound": "data/lwl/55ed3829b4e2c.mp3",
+        "image": "data/lwl/Typewriter-204x136.jpg",
+        "label": "Typewriter"
+    },
+    {
+        "sound": "data/lwl/55ed29b0a1d88.mp3",
+        "image": "data/lwl/Dial-operated-telephone-204x136.jpg",
+        "label": "Dial-operated telephone"
+    },
+    {
+        "sound": "data/lwl/56542913349fb.mp3",
+        "image": "data/lwl/Teleprinter-204x136.jpg",
+        "label": "Teleprinter: automatic printing"
+    },
+    {
+        "sound": "data/lwl/56542ecd33622.mp3",
+        "image": "data/lwl/Polishing-machine-204x136.jpg",
+        "label": "Polishing machine"
+    },
+    {
+        "sound": "data/lwl/5656ec8d2592e.mp3",
+        "image": "data/lwl/Glass-blowing_-forming-the-glass-body-204x136.jpg",
+        "label": "Glass-blowing I: forming the body"
+    },
+    {
+        "sound": "data/lwl/5656f0ae19e7d.mp3",
+        "image": "data/lwl/Glass-blowing_-forming-the-glass-body_part2-204x136.jpg",
+        "label": "Glass-blowing II: forming the body"
+    },
+    {
+        "sound": "data/lwl/5657056d24f84.mp3",
+        "image": "data/lwl/Glass-blowing_-forming-drink-opening-204x136.jpg",
+        "label": "Glass-blowing III: forming the drink opening"
+    },
+    {
+        "sound": "data/lwl/55e5a91d0ca19.mp3",
+        "image": "data/lwl/Diffuser-204x136.jpg",
+        "label": "Diffuser"
+    },
+    {
+        "sound": "data/lwl/54819a7789aaa.mp3",
+        "image": "data/lwl/Crank-wheel-204x136.jpg",
+        "label": "Crank wheel"
+    },
+    {
+        "sound": "data/lwl/5485adf63b523.mp3",
+        "image": "data/lwl/Riveting-machine-204x136.jpg",
+        "label": "Riveting machine"
+    },
+    {
+        "sound": "data/lwl/5492ee7b4922c.mp3",
+        "image": "data/lwl/Tumble-wash--204x136.jpg",
+        "label": "Tumble-wash (Germ.: \"Polterwäsche\")"
+    },
+    {
+        "sound": "data/lwl/549300191d652.mp3",
+        "image": "data/lwl/Bucket-chain-204x136.jpg",
+        "label": "Bucket chain"
+    },
+    {
+        "sound": "data/lwl/54930e2187ded.mp3",
+        "image": "data/lwl/Eccentric-press-204x136.jpg",
+        "label": "Eccentric press"
+    },
+    {
+        "sound": "data/lwl/55e580157be68.mp3",
+        "image": "data/lwl/Wire-weaving-loom-204x136.jpg",
+        "label": "Wire weaving loom"
+    },
+    {
+        "sound": "data/lwl/55e6fa65beb54.mp3",
+        "image": "data/lwl/Cooling-zone-204x136.jpg",
+        "label": "Steelwork: Cooling zone"
+    },
+    {
+        "sound": "data/pgw/Palmengartenwehr-1.mp3",
+        "image": "data/pgw/Palmengartenwehr-1.jpg"
+    },
+    {
+        "sound": "data/pgw/Palmengartenwehr-2.mp3",
+        "image": "data/pgw/Palmengartenwehr-2.jpg"
+    },
+    {
+        "sound": "data/pgw/Palmengartenwehr-3.mp3",
+        "image": "data/pgw/Palmengartenwehr-3.jpg"
+    },
+    {
+        "sound": "data/mfd/Heidelberger_Tiegel_1.MP3",
+        "image": "data/mfd/Heidelberger_Tiegel_1.jpg"
+    },
+    {
+        "sound": "data/data/mfd/Heidelberger_Tiegel_2.MP3",
+        "image": "data/mfd/Heidelberger_Tiegel_2.jpg"
+    },
+    {
+        "sound": "data/mfd/Heidelberger_Tiegel_3.MP3",
+        "image": "data/mfd/Heidelberger_Tiegel_3.jpg"
+    },
+    {
+        "sound": "data/mfd/Heidelberger_Tiegel_4.MP3",
+        "image": "data/mfd/Heidelberger_Tiegel_4.jpg"
+    },
+    {
+        "sound": "data/mfd/Heidelberger_Tiegel_5.MP3",
+        "image": "data/mfd/Heidelberger_Tiegel_5.jpg"
+    },
+    {
+        "sound": "data/mfd/Heidelberger_Tiegel_6.MP3",
+        "image": "data/mfd/Heidelberger_Tiegel_6.jpg"
+    },
+    {
+        "sound": "data/mfd/MAN_1.MP3",
+        "image": "data/mfd/MAN_1.jpg"
+    },
+    {
+        "sound": "data/mfd/MAN_2.MP3",
+        "image": "data/mfd/MAN_2.jpg"
+    },
+    {
+        "sound": "data/mfd/MAN_3.MP3",
+        "image": "data/mfd/MAN_3.jpg"
+    },
+    {
+        "sound": "data/mfd/MAN_4.MP3",
+        "image": "data/mfd/MAN_4.jpg"
+    },
+    {
+        "sound": "data/mfd/Victoria_Front_Gudrun.MP3",
+        "image": "data/mfd/Victoria_Front_Gudrun.jpg"
+    }
+]
