@@ -1,4 +1,7 @@
 .image0 {
+    background-color: transparent;
+    background-size: 200%;
+    background-position: center;
     position: absolute;
     width:100%;
     height:100%;
@@ -7,9 +10,13 @@
     filter: blur(50px) saturate(50%);
     mix-blend-mode: lighten;
     z-index:10;
+    opacity:0.0;
 }
 
 .image1 {
+    background-color: transparent;
+    background-size: 200%;
+    background-position: center;
     position: absolute;
     width:100%;
     height:100%;
@@ -18,9 +25,13 @@
     filter: blur(50px) saturate(50%);
     mix-blend-mode: lighten;
     z-index:20;
+    opacity:0.0;
 }
 
 .image2 {
+    background-color: transparent;
+    background-size: 200%;
+    background-position: center;
     position: absolute;
     width:100%;
     height:100%;
@@ -29,12 +40,27 @@
     filter: blur(50px) saturate(50%);
     mix-blend-mode: lighten;
     z-index:30;
+    opacity:0.0;
+}
+
+.layer {
+    background-color: transparent;
+    background-size: 200%;
+    background-position: center;
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    -webkit-filter: blur(50px) saturate(50%); /* Safari */
+    filter: blur(50px) saturate(50%);
+    mix-blend-mode: lighten;
+    opacity:0.0;
 }
 
 .splash_container {
     position:absolute;
     margin:auto;
-    z-index:80;
+    z-index:1000;
     width:100%;
     height:100%;
     background-color: transparent;
@@ -54,5 +80,5 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    z-index:90;
+    z-index:1100;
 }
