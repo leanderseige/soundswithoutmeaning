@@ -249,11 +249,6 @@
         "label": "Overhead monorail (Wuppertal Suspension Railway) - inside"
     },
     {
-        "sound": "data/lwl/5493fc411996a.mp3",
-        "image": "data/lwl/Mine-telephone-204x136.jpg",
-        "label": "Mine telephone"
-    },
-    {
         "sound": "data/lwl/55ccbbecb7e3c.mp3",
         "image": "data/lwl/Time-clockIII-204x136.jpg",
         "label": "Time clock"

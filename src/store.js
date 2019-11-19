@@ -1,36 +1,33 @@
 import { createStore, compose } from 'redux'
-import logo from './logo.svg';
 
 function reducer(state, action) {
+    var temp
     switch (action.type) {
+        case 'LAYER_SETFRAMES':
+          temp = Object.assign({}, state.layer_frames)
+          temp[action.id]=action.frames
+          return Object.assign({}, state, { layer_frames: temp })
+        case 'LAYER_SETCSS':
+          temp = Object.assign({}, state.layer_css)
+          temp[action.id] = Object.assign({}, action.css)
+          return Object.assign({}, state, { layer_css: temp })
+        case 'LAYER_SETAUDIO':
+          temp = Object.assign({}, state.layer_audio)
+          temp[action.id] = action.audio
+          return Object.assign({}, state, { layer_audio: temp })
         case "SET_URLS":
             // console.log("setting "+action.audiourls)
             return Object.assign({}, state, {
                 audiourls: action.audiourls,
                 imageurls: action.imageurls
             })
-        case "SET_AUDIODEVICE":
-            // console.log("setting device")
-            return Object.assign({}, state, {
-                device: action.device
-            })
-        case "SET_CSS":
-            return Object.assign({}, state, {
-                styles: action.css
-            })
         case "HIDE_SPLASH":
             return Object.assign({}, state, {
                 splashstyle: {display: 'none'}
             })
-        case "INC_FRAMES":
-            // console.log("inc frames")
-            var temp = Object.assign({},state.iframes,action.iframes)
-            for(var i in temp) {
-                temp[i] = temp[i]-10
-            }
+        case "SET_MODE":
             return Object.assign({}, state, {
-                frames: state.frames+10,
-                iframes: temp
+              mode: action.mode
             })
         default:
             {
@@ -40,11 +37,11 @@ function reducer(state, action) {
 }
 
 const initial_state = {
-    frames:0,
-    images: { 0: "lala", 1: {logo}, 2: {logo} },
-    iframes: { 0: 3000, 1: 3000, 2: 3000 },
-    styles: { 0: {}, 1: {}, 2: {} },
-    splashstyle: {display:'flex'}
+    mode:0,
+    splashstyle: {display:'flex'},
+    layer_frames: {},
+    layer_css: {},
+    layer_audio: {}
 }
 
 const enhancers = compose(
