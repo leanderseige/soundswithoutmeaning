@@ -29,6 +29,10 @@ function reducer(state, action) {
             return Object.assign({}, state, {
               mode: action.mode
             })
+        case "SET_LAYERS":
+            return Object.assign({}, state, {
+              layers: action.layers
+            })
         default:
             {
                 return state
@@ -41,7 +45,8 @@ const initial_state = {
     splashstyle: {display:'flex'},
     layer_frames: {},
     layer_css: {},
-    layer_audio: {}
+    layer_audio: {},
+    layers: 0
 }
 
 const enhancers = compose(

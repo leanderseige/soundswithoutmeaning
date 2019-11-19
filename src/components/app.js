@@ -50,6 +50,8 @@ class App extends Component {
           }
         }
 
+        store.dispatch({type:'SET_LAYERS',layers:this.props.layers})
+
       return (
         <div className="App">
             {layers}
@@ -77,7 +79,6 @@ function mapStateToProps(state, ownProps) {
     return {
         audiourls: state.audiourls,
         images: state.images,
-        styles: state.styles,
         splashstyle: state.splashstyle,
         layer_css: state.layer_css
     }

@@ -6,7 +6,7 @@ import store from './store';
 
 render(
     <Provider store={store}>
-        <App layers={5} />
+        <App layers={3} />
     </Provider>,
     document.getElementById('root')
 );

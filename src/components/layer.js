@@ -9,7 +9,7 @@ class Layer extends Component {
       return
     }
     // calculate general animation parameters
-    var relframes = (this.props.frames+this.props.id*750) % 3000
+    var relframes = (this.props.frames+this.props.id*(3000/this.props.layers)) % 3000
     // var scale = Math.sin((relframes/3000)*Math.PI)
     var scale = (1500-Math.abs((1500-relframes)))/1500
     // set volume
@@ -30,7 +30,7 @@ class Layer extends Component {
     newcss['opacity'] = scale
     store.dispatch({type:'LAYER_SETCSS',id:this.props.id,css:newcss})
     // calc frames
-    var newframes = this.props.frames-10
+    var newframes = this.props.frames-8
     if(newframes<0){
       newframes = 3000
     }
@@ -43,7 +43,7 @@ class Layer extends Component {
     console.log("I am "+this.props.id)
     store.dispatch({type:'LAYER_SETFRAMES',id:this.props.id,frames:3000})
     store.dispatch({type:'LAYER_SETAUDIO',id:this.props.id,audio:new Audio()})
-    setInterval(this.mainloop, 200)
+    setInterval(this.mainloop, 160)
   }
 
   render() {
@@ -57,6 +57,7 @@ class Layer extends Component {
 function mapStateToProps(state, ownProps) {
     return {
         mode: state.mode,
+        layers: state.layers,
         all_audiourls: state.audiourls,
         all_imageurls: state.imageurls,
         frames: state.layer_frames[ownProps.id],
