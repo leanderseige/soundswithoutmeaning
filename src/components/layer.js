@@ -22,7 +22,7 @@ class Layer extends Component {
       var toplay = this.props.all_imageurls[randitem]
       console.log("playing "+toplay)
       newcss['backgroundImage'] = 'url(' + toplay + ')'
-      newcss['zIndex'] = this.props.id
+      newcss['zIndex'] = this.props.id+1
       this.props.audio.src=this.props.all_audiourls[randitem]
       this.props.audio.loop=true
       this.props.audio.play()
