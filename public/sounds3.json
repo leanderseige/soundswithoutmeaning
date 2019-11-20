@@ -140,12 +140,12 @@
     },
     {
         "sound": "data/lwl/5485863f6312b.mp3",
-        "image": "data/lwl/Sharpening-machine-Feinpließtbock-204x136.jpg",
+        "image": "data/lwl/Sharpening-machine-Feinpliesstbock-204x136.jpg",
         "label": "Sharpening machine"
     },
     {
         "sound": "data/lwl/54858c2443fcc.mp3",
-        "image": "data/lwl/Sharpening-machine-Blaupließtbock-204x136.jpg",
+        "image": "data/lwl/Sharpening-machine-Blaupliesstbock-204x136.jpg",
         "label": "Sharpening machine (“Blaupließtbock”)"
     },
     {
