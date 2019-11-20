@@ -28,6 +28,14 @@ class App extends Component {
                         tempa[record]=data[record]['sound']
                         tempi[record]=data[record]['image']
                         // console.log(data[record]['sound'])
+                        fetch(tempa[record], { method: 'HEAD' }).catch(
+                            function(error) {
+                                console.log(error);
+                            })
+                        fetch(tempi[record], { method: 'HEAD' }).catch(
+                            function(error) {
+                                console.log(error);
+                            })
                     }
                     store.dispatch({
                         type: 'SET_URLS',

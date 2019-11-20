@@ -160,7 +160,7 @@
     },
     {
         "sound": "data/lwl/5485c3e3ccf38.mp3",
-        "image": "data/lwl/“Schurbock”-polishing-204x136.jpg",
+        "image": "data/lwl/Schurbock-polishing-204x136.jpg",
         "label": "“Schurbock” polishing"
     },
     {
@@ -455,7 +455,7 @@
         "image": "data/mfd/Heidelberger_Tiegel_1.jpg"
     },
     {
-        "sound": "data/data/mfd/Heidelberger_Tiegel_2.MP3",
+        "sound": "data/mfd/Heidelberger_Tiegel_2.MP3",
         "image": "data/mfd/Heidelberger_Tiegel_2.jpg"
     },
     {
