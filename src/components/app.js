@@ -2,14 +2,21 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import store from '../store'
 import Layer from './layer.js'
+import content from './content.js'
 import '../App.css';
 
 class App extends Component {
 
-    startMainloop() {
+    startMainloop(event) {
         console.log("Go!")
+        console.log(event)
         store.dispatch({type:'HIDE_SPLASH'})
         store.dispatch({type:'SET_MODE', mode:1})
+        event.stopPropagation()
+    }
+
+    stopReload(event) {
+        window.location.reload()
     }
 
     constructor(props) {
@@ -45,6 +52,17 @@ class App extends Component {
                 }
             )
         this.startMainloop = this.startMainloop.bind(this)
+        this.shieldClick = this.shieldClick.bind(this)
+    }
+
+    goFullscreen(event) {
+        console.log("click")
+        store.dispatch({type:'SHOW_SPLASH'})
+    }
+
+    shieldClick(event) {
+        console.log("click")
+        store.dispatch({type:'SHOW_SPLASH'})
     }
 
     render() {
@@ -61,26 +79,30 @@ class App extends Component {
         store.dispatch({type:'SET_LAYERS',layers:this.props.layers})
 
       return (
-        <div className="App">
+        <div className="App" onClick={this.shieldClick}>
             {layers}
-            <div style={state.splashstyle} className="splash_container" >
+            <div style={state.splashstyle} className="splash_container">
                 <div>
-                <h1>sounds without meaning</h1><br />
-                <br />
-                please use your headphones<br />
-                <br />
-                concentrate and relax<br />
-                <br />
-                <br />
-                <button onClick={this.startMainloop} className="splash_button">
-                    Start
-                </button>
+                    {content[0]}
+                    <button onClick={this.startMainloop} className="splash_button">
+                        Start
+                    </button>
+                    <br />
+                    <button onClick={this.stopReload} className="splash_button">
+                        Reset
+                    </button>
+                    <br />
+                    <button onClick={this.stopReload} className="splash_button">
+                        About
+                    </button>
+                    <button onClick={this.goFullscreen} className="splash_button">
+                        Fullscreen
+                    </button>
                 </div>
             </div>
         </div>
-      );
+      )
     }
-
 }
 
 function mapStateToProps(state, ownProps) {

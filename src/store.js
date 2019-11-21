@@ -25,6 +25,10 @@ function reducer(state, action) {
             return Object.assign({}, state, {
                 splashstyle: {display: 'none'}
             })
+        case "SHOW_SPLASH":
+            return Object.assign({}, state, {
+                splashstyle: {display: 'flex'}
+            })
         case "SET_MODE":
             return Object.assign({}, state, {
               mode: action.mode
