@@ -44,6 +44,7 @@ class App extends Component {
     }
 
     goFullscreen(event) {
+        console.log("fs click")
         var elem = document.documentElement;
         if(this.props.mode['screen']===1) {
             if (document.exitFullscreen) {
@@ -55,7 +56,7 @@ class App extends Component {
             } else if (document.msExitFullscreen) { /* IE/Edge */
                 document.msExitFullscreen();
             }
-            store.dispatch({type:'SET_MODE', mode: { 'screen':1 } })
+            store.dispatch({type:'SET_MODE', mode: { 'screen':0 } })
         } else {
             if (elem.requestFullscreen) {
                 elem.requestFullscreen();
@@ -66,8 +67,9 @@ class App extends Component {
             } else if (elem.msRequestFullscreen) { /* IE/Edge */
                 elem.msRequestFullscreen();
             }
-            store.dispatch({type:'SET_MODE', mode: { 'screen':0 } })
+            store.dispatch({type:'SET_MODE', mode: { 'screen':1 } })
         }
+        event.stopPropagation()
     }
 
     constructor(props) {
