@@ -4,19 +4,70 @@ import store from '../store'
 import Layer from './layer.js'
 import content from './content.js'
 import '../App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faStop, faInfoCircle, faCompressArrowsAlt, faExpandArrowsAlt, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 
 class App extends Component {
 
-    startMainloop(event) {
-        console.log("Go!")
-        console.log(event)
-        store.dispatch({type:'HIDE_SPLASH'})
-        store.dispatch({type:'SET_MODE', mode:1})
+    handleStartButton(event) {
+        if(this.props.mode['play']===1) {
+            window.location.reload()
+        } else {
+            // hack around iOS anxiousness
+            for(var n in this.props.layer_audio) {
+                console.log("silent playing "+n)
+                this.props.layer_audio[n].src = "data/silence.mp3"
+                this.props.layer_audio[n].play()
+            }
+            console.log("Go!")
+            console.log(event)
+            store.dispatch({type:'HIDE_SPLASH'})
+            store.dispatch({type:'SET_MODE', mode: { 'play':1 } })
+            event.stopPropagation()
+        }
+    }
+
+    shieldClick(event) {
+        console.log("shield click")
+        store.dispatch({type:'SHOW_SPLASH'})
+    }
+
+    handleInfoButton(event) {
+        store.dispatch({type:'SET_MODE', mode: { 'text':1 } })
         event.stopPropagation()
     }
 
-    stopReload(event) {
-        window.location.reload()
+    handleCloseButton(event) {
+        store.dispatch({type:'SET_MODE', mode: { 'text':0 } })
+        store.dispatch({type:'HIDE_SPLASH'})
+        event.stopPropagation()
+    }
+
+    goFullscreen(event) {
+        var elem = document.documentElement;
+        if(this.props.mode['screen']===1) {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) { /* Firefox */
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE/Edge */
+                document.msExitFullscreen();
+            }
+            store.dispatch({type:'SET_MODE', mode: { 'screen':1 } })
+        } else {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                elem.msRequestFullscreen();
+            }
+            store.dispatch({type:'SET_MODE', mode: { 'screen':0 } })
+        }
     }
 
     constructor(props) {
@@ -51,18 +102,10 @@ class App extends Component {
                     })
                 }
             )
-        this.startMainloop = this.startMainloop.bind(this)
+        this.handleStartButton = this.handleStartButton.bind(this)
         this.shieldClick = this.shieldClick.bind(this)
-    }
+        this.goFullscreen = this.goFullscreen.bind(this)
 
-    goFullscreen(event) {
-        console.log("click")
-        store.dispatch({type:'SHOW_SPLASH'})
-    }
-
-    shieldClick(event) {
-        console.log("click")
-        store.dispatch({type:'SHOW_SPLASH'})
     }
 
     render() {
@@ -77,28 +120,64 @@ class App extends Component {
         }
 
         store.dispatch({type:'SET_LAYERS',layers:this.props.layers})
+        // <FontAwesomeIcon icon={faStop} />
+        // <FontAwesomeIcon icon={faInfo} />
+        // <FontAwesomeIcon icon={faCompressArrowsAlt} />
+        // <FontAwesomeIcon icon={faExpandArrowsAlt} />
+
+    var button_play=false
+    if(this.props.mode['play']===1) {
+        button_play= <FontAwesomeIcon icon={faStop} />
+    } else{
+        button_play= <FontAwesomeIcon icon={faPlay} />
+    }
+
+    var button_screen=false
+    if(this.props.mode['screen']===1) {
+        button_screen= <FontAwesomeIcon icon={faCompressArrowsAlt} />
+    } else{
+        button_screen= <FontAwesomeIcon icon={faExpandArrowsAlt} />
+    }
+
+    var splash_menu =
+    <div>
+        {content[0]}
+        <button onClick={this.handleStartButton} className="sbVeryBig">
+            {button_play}
+        </button>
+        <br />
+        <button onClick={this.goFullscreen} className="sbBig">
+            {button_screen}
+        </button>
+        <button onClick={this.handleInfoButton} className="sbBig">
+            <FontAwesomeIcon icon={faInfoCircle} />
+        </button>
+        <button onClick={this.handleCloseButton} className="sbBig">
+            <FontAwesomeIcon icon={faTimesCircle} />
+        </button>
+    </div>
+
+    var splash_info =
+    <div>
+        {content[1]}
+        <br />
+        <button onClick={this.handleCloseButton} className="sbBig">
+            <FontAwesomeIcon icon={faTimesCircle} />
+        </button>
+    </div>
+
+    var splash_content = false
+    if(this.props.mode['text']===1) {
+        splash_content = splash_info
+    } else {
+        splash_content = splash_menu
+    }
 
       return (
         <div className="App" onClick={this.shieldClick}>
             {layers}
             <div style={state.splashstyle} className="splash_container">
-                <div>
-                    {content[0]}
-                    <button onClick={this.startMainloop} className="splash_button">
-                        Start
-                    </button>
-                    <br />
-                    <button onClick={this.stopReload} className="splash_button">
-                        Reset
-                    </button>
-                    <br />
-                    <button onClick={this.stopReload} className="splash_button">
-                        About
-                    </button>
-                    <button onClick={this.goFullscreen} className="splash_button">
-                        Fullscreen
-                    </button>
-                </div>
+                {splash_content}
             </div>
         </div>
       )
@@ -107,10 +186,12 @@ class App extends Component {
 
 function mapStateToProps(state, ownProps) {
     return {
+        mode: state.mode,
         audiourls: state.audiourls,
         images: state.images,
         splashstyle: state.splashstyle,
-        layer_css: state.layer_css
+        layer_css: state.layer_css,
+        layer_audio: state.layer_audio
     }
 }
 

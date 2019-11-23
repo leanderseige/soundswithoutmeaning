@@ -369,11 +369,6 @@
         "label": "Typewriter"
     },
     {
-        "sound": "data/lwl/55ed29b0a1d88.mp3",
-        "image": "data/lwl/Dial-operated-telephone-204x136.jpg",
-        "label": "Dial-operated telephone"
-    },
-    {
         "sound": "data/lwl/56542913349fb.mp3",
         "image": "data/lwl/Teleprinter-204x136.jpg",
         "label": "Teleprinter: automatic printing"

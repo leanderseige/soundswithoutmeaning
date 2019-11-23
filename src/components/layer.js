@@ -5,7 +5,7 @@ import store from '../store'
 class Layer extends Component {
 
   mainloop() {
-    if(this.props.mode===0) {
+    if(this.props.mode['play']===0) {
       return
     }
     // calculate general animation parameters

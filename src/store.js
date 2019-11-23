@@ -22,6 +22,7 @@ function reducer(state, action) {
                 imageurls: action.imageurls
             })
         case "HIDE_SPLASH":
+            console.log("hiding")
             return Object.assign({}, state, {
                 splashstyle: {display: 'none'}
             })
@@ -30,9 +31,8 @@ function reducer(state, action) {
                 splashstyle: {display: 'flex'}
             })
         case "SET_MODE":
-            return Object.assign({}, state, {
-              mode: action.mode
-            })
+            temp = Object.assign({}, state.mode, action.mode)
+            return Object.assign({}, state, { mode: temp } )
         case "SET_LAYERS":
             return Object.assign({}, state, {
               layers: action.layers
@@ -45,7 +45,11 @@ function reducer(state, action) {
 }
 
 const initial_state = {
-    mode:0,
+    mode: {
+        'screen':0,
+        'text':0,
+        'play':0
+    },
     splashstyle: {display:'flex'},
     layer_frames: {},
     layer_css: {},

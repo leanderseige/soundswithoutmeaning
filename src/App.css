@@ -30,11 +30,11 @@
     /* display: flex; */
     align-items: center;
     justify-content: center;
-    color: #09d3ac;
+    color: #ccc;
 }
 
 .splash_button {
-    background-color: #09d3ac;
+    background-color: #ccc;
     border: none;
     color: black;
     padding: 15px 32px;
@@ -45,4 +45,32 @@
     font-size: 16px;
     z-index:2100;
     width:66%;
+}
+
+.sbBig {
+    background-color: transparent;
+    border: none;
+    color: #ccc;
+    padding: 25px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    z-index:2100;
+    filter: drop-shadow(0 0px 16px #ccc);
+}
+
+.sbVeryBig {
+    background-color: transparent;
+    border: none;
+    color: #ccc;
+    padding: 15px 32px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 48px;
+    z-index:2100;
+    filter: drop-shadow(0 0px 16px #ccc);
 }
