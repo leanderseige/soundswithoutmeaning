@@ -128,10 +128,13 @@ class App extends Component {
         // <FontAwesomeIcon icon={faExpandArrowsAlt} />
 
     var button_play=false
+    var app_style={backgroundColor:'#111'}
     if(this.props.mode['play']===1) {
         button_play= <FontAwesomeIcon icon={faStop} />
+        app_style={backgroundColor:'#111'}
     } else{
         button_play= <FontAwesomeIcon icon={faPlay} />
+        app_style={backgroundColor:'#111'}
     }
 
     var button_screen=false
@@ -176,7 +179,7 @@ class App extends Component {
     }
 
       return (
-        <div className="App" onClick={this.shieldClick}>
+        <div className="App" onClick={this.shieldClick} style={app_style} >
             {layers}
             <div style={state.splashstyle} className="splash_container">
                 {splash_content}
