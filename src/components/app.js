@@ -79,7 +79,7 @@ class App extends Component {
           store.dispatch({type:'LAYER_INIT',id:i})
         }
 
-        fetch("sounds3.json")
+        fetch("sounds4.json")
                 .then(res => res.json())
                 .then((data) => {
                     var tempa = {}

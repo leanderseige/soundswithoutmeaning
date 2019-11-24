@@ -13,14 +13,14 @@ class Layer extends Component {
     // var scale = Math.sin((relframes/3000)*Math.PI)
     var scale = (1500-Math.abs((1500-relframes)))/1500
     // set volume
-    this.props.audio.volume = scale
+    this.props.audio.volume = 1 // PREFADE scale
     // build new css set
     var newcss = Object.assign({},this.props.css)
     // change medium?
     if( relframes % 3000 === 0) {
       var randitem = Math.floor(Math.random() * Object.keys(this.props.all_imageurls).length)
       var toplay = this.props.all_imageurls[randitem]
-      console.log("playing "+toplay)
+      console.log(this.props.id+" "+Math.round((new Date()).getTime() / 1000)+" playing "+toplay)
       newcss['backgroundImage'] = 'url(' + toplay + ')'
       newcss['zIndex'] = this.props.id+1
       this.props.audio.src=this.props.all_audiourls[randitem]
