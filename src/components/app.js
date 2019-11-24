@@ -90,11 +90,11 @@ class App extends Component {
                         // console.log(data[record]['sound'])
                         fetch(tempa[record], { method: 'HEAD' }).catch(
                             function(error) {
-                                console.log(error);
+                                console.log(error)
                             })
                         fetch(tempi[record], { method: 'HEAD' }).catch(
                             function(error) {
-                                console.log(error);
+                                console.log(error)
                             })
                     }
                     store.dispatch({
