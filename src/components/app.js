@@ -5,7 +5,7 @@ import Layer from './layer.js'
 import content from './content.js'
 import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay, faStop, faInfoCircle, faCompressArrowsAlt, faExpandArrowsAlt, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { faPlay, faStop, faInfoCircle, faCompressArrowsAlt, faExpandArrowsAlt, faTimesCircle, faChartBar } from '@fortawesome/free-solid-svg-icons'
 
 class App extends Component {
 
@@ -18,6 +18,7 @@ class App extends Component {
                 console.log("silent playing "+n)
                 this.props.layer_audio[n].src = "data/silence.mp3"
                 this.props.layer_audio[n].play()
+                store.dispatch({type:'LAYER_SETLABEL', id:n, label:"Silence"})
             }
             console.log("Go!")
             console.log(event)
@@ -34,6 +35,11 @@ class App extends Component {
 
     handleInfoButton(event) {
         store.dispatch({type:'SET_MODE', mode: { 'text':1 } })
+        event.stopPropagation()
+    }
+
+    handleChartButton(event) {
+        store.dispatch({type:'SET_MODE', mode: { 'text':2 } })
         event.stopPropagation()
     }
 
@@ -75,18 +81,18 @@ class App extends Component {
     constructor(props) {
         super(props)
 
-        for (var i=0;i<this.props.layers;i++) {
-          store.dispatch({type:'LAYER_INIT',id:i})
-        }
+        store.dispatch({type:'SET_LAYERS',nol:this.props.nol})
 
         fetch("sounds4.json")
                 .then(res => res.json())
                 .then((data) => {
                     var tempa = {}
                     var tempi = {}
+                    var templ = {}
                     for(var record in data) {
                         tempa[record]=data[record]['sound']
                         tempi[record]=data[record]['image']
+                        templ[record]=data[record]['label']
                         // console.log(data[record]['sound'])
                         fetch(tempa[record], { method: 'HEAD' }).catch(
                             function(error) {
@@ -100,7 +106,8 @@ class App extends Component {
                     store.dispatch({
                         type: 'SET_URLS',
                         audiourls: tempa,
-                        imageurls: tempi
+                        imageurls: tempi,
+                        audiolabels: templ
                     })
                 }
             )
@@ -116,12 +123,11 @@ class App extends Component {
         const layers = []
 
         if(state.imageurls) {
-          for (var i=0;i<this.props.layers;i++) {
+          for (var i=0;i<this.props.nol;i++) {
             layers.push(<Layer id={i} key={i.toString()} />)
           }
         }
 
-        store.dispatch({type:'SET_LAYERS',layers:this.props.layers})
         // <FontAwesomeIcon icon={faStop} />
         // <FontAwesomeIcon icon={faInfo} />
         // <FontAwesomeIcon icon={faCompressArrowsAlt} />
@@ -160,6 +166,10 @@ class App extends Component {
         <button onClick={this.handleCloseButton} className="sbBig">
             <FontAwesomeIcon icon={faTimesCircle} />
         </button>
+        <br />
+        <button onClick={this.handleChartButton} className="sbBig">
+            <FontAwesomeIcon icon={faChartBar} />
+        </button>
     </div>
 
     var splash_info =
@@ -171,9 +181,28 @@ class App extends Component {
         </button>
     </div>
 
+    var splash_charts = []
+    var percent = 0
+    if(this.props.mode['play']>0) {
+      var now = (new Date()).getTime()
+      for (var i=0;i<this.props.nol;i++) {
+        percent = Math.round((this.props.nexttime[i]-now)/600)
+        splash_charts.push(<p>{this.props.layer_label[i]} {percent} %</p>)
+      }
+    }
+    splash_charts =<div>
+      {splash_charts}
+      <br />
+      <button onClick={this.handleCloseButton} className="sbBig">
+          <FontAwesomeIcon icon={faTimesCircle} />
+      </button>
+    </div>
+
     var splash_content = false
     if(this.props.mode['text']===1) {
         splash_content = splash_info
+    } else if (this.props.mode['text']===2) {
+        splash_content = splash_charts
     } else {
         splash_content = splash_menu
     }
@@ -196,7 +225,9 @@ function mapStateToProps(state, ownProps) {
         images: state.images,
         splashstyle: state.splashstyle,
         layer_css: state.layer_css,
-        layer_audio: state.layer_audio
+        layer_audio: state.layer_audio,
+        layer_label: state.layer_label,
+        nexttime: state.layer_nexttime
     }
 }
 

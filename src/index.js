@@ -12,7 +12,7 @@ serviceWorker.register();
 
 render(
     <Provider store={store}>
-        <App layers={3} />
+        <App nol={3} />
     </Provider>,
     document.getElementById('root')
 )

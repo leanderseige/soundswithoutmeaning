@@ -18,7 +18,7 @@ const content = {
             </p>
             <h1>Software</h1><br />
             Leander Seige, GPL V3.0<br />
-            <a href="https://github.com/leanderseige/soundswithoutmeaning" target="_blank">https://github.com/leanderseige/soundswithoutmeaning</a><br />
+            <a href="https://github.com/leanderseige/soundswithoutmeaning" target="_blank" rel="noopener noreferrer">https://github.com/leanderseige/soundswithoutmeaning</a><br />
             <br />
         </div>
 

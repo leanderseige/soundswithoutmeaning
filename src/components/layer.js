@@ -5,45 +5,55 @@ import store from '../store'
 class Layer extends Component {
 
   mainloop() {
+    // are we actually on air?
     if(this.props.mode['play']===0) {
       return
     }
-    // calculate general animation parameters
-    var relframes = (this.props.frames+this.props.id*(3000/this.props.layers)) % 3000
-    // var scale = Math.sin((relframes/3000)*Math.PI)
-    var scale = (1500-Math.abs((1500-relframes)))/1500
-    // set volume
-    this.props.audio.volume = 1 // PREFADE scale
-    // build new css set
+    // let's calculate our timing
+    var now = (new Date()).getTime()
+    var reltime = this.props.nexttime - now
+    // prepare new css object
     var newcss = Object.assign({},this.props.css)
-    // change medium?
-    if( relframes % 3000 === 0) {
+    // are we past the deadline? load new medium then
+    if( reltime <= 0 ){
+      // reset relative time and set next deadline
+      reltime = 60000 + reltime
+      store.dispatch({type:'LAYER_SETNEXTTIME',
+        id:this.props.id,
+        nexttime:this.props.nexttime+60000
+      })
       var randitem = Math.floor(Math.random() * Object.keys(this.props.all_imageurls).length)
       var toplay = this.props.all_imageurls[randitem]
       console.log(this.props.id+" "+Math.round((new Date()).getTime() / 1000)+" playing "+toplay)
       newcss['backgroundImage'] = 'url(' + toplay + ')'
-      newcss['zIndex'] = this.props.id+1
       this.props.audio.src=this.props.all_audiourls[randitem]
       this.props.audio.loop=true
       this.props.audio.play()
+      var label = this.props.all_audiolabels[randitem]
+      store.dispatch({type:'LAYER_SETLABEL', id:this.props.id, label:label})
     }
+    var scale = (30000-Math.abs((30000-reltime)))/30000
     newcss['opacity'] = scale
-    store.dispatch({type:'LAYER_SETCSS',id:this.props.id,css:newcss})
-    // calc frames
-    var newframes = this.props.frames-8
-    if(newframes<0){
-      newframes = 3000
-    }
-    store.dispatch({type:'LAYER_SETFRAMES',id:this.props.id,frames:newframes})
+    store.dispatch({type:'LAYER_SETCSS', id:this.props.id, css:newcss})
   }
 
   constructor(props) {
     super(props)
     this.mainloop = this.mainloop.bind(this);
-    console.log("I am "+this.props.id)
-    store.dispatch({type:'LAYER_SETFRAMES',id:this.props.id,frames:3000})
-    store.dispatch({type:'LAYER_SETAUDIO',id:this.props.id,audio:new Audio()})
-    setInterval(this.mainloop, 160)
+    console.log("I am "+this.props.id+" of "+this.props.nol)
+    store.dispatch({type:'LAYER_SETNEXTTIME',
+      id:this.props.id,
+      nexttime:(60000/this.props.nol)*this.props.id+(new Date()).getTime()
+    })
+    store.dispatch({type:'LAYER_SETAUDIO',
+      id:this.props.id,
+      audio:new Audio()
+    })
+    store.dispatch({type:'LAYER_SETCSS',
+      id:this.props.id,
+      css: { zIndex : (this.props.id+1) }
+    })
+    setInterval(this.mainloop, 250)
   }
 
   render() {
@@ -60,9 +70,11 @@ function mapStateToProps(state, ownProps) {
         layers: state.layers,
         all_audiourls: state.audiourls,
         all_imageurls: state.imageurls,
-        frames: state.layer_frames[ownProps.id],
+        all_audiolabels: state.audiolabels,
         css: state.layer_css[ownProps.id],
         audio: state.layer_audio[ownProps.id],
+        nexttime: state.layer_nexttime[ownProps.id],
+        nol: state.nol,
         id: ownProps.id
     }
 }

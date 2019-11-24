@@ -146,12 +146,12 @@
     {
         "sound": "data/lwl/looped_54858c2443fcc.mp3",
         "image": "data/lwl/Sharpening-machine-Blaupliesstbock-204x136.jpg",
-        "label": "Sharpening machine (“Blaupließtbock”)"
+        "label": "Sharpening machine (Blaupliesstbock)"
     },
     {
         "sound": "data/lwl/looped_5485956ac0e06.mp3",
         "image": "data/lwl/Kessel-sharpening-machine-204x136.jpg",
-        "label": "sharpening machine"
+        "label": "Kessel Sharpening machine"
     },
     {
         "sound": "data/lwl/looped_5485bf989f46c.mp3",
@@ -161,7 +161,7 @@
     {
         "sound": "data/lwl/looped_5485c3e3ccf38.mp3",
         "image": "data/lwl/Schurbock-polishing-204x136.jpg",
-        "label": "“Schurbock” polishing"
+        "label": "Schurbock polishing"
     },
     {
         "sound": "data/lwl/looped_5486a519630db.mp3",
@@ -176,7 +176,7 @@
     {
         "sound": "data/lwl/looped_5486b8180dd2f.mp3",
         "image": "data/lwl/Slit-machine-204x136.jpg",
-        "label": "“Slit machine”"
+        "label": "Slit machine"
     },
     {
         "sound": "data/lwl/looped_548ea21cec72e.mp3",
@@ -435,58 +435,72 @@
     },
     {
         "sound": "data/pgw/looped_Palmengartenwehr-1.mp3",
-        "image": "data/pgw/Palmengartenwehr-1.jpg"
+        "image": "data/pgw/Palmengartenwehr-1.jpg",
+        "label": "Palmengartenwehr Situation 1"
     },
     {
         "sound": "data/pgw/looped_Palmengartenwehr-2.mp3",
-        "image": "data/pgw/Palmengartenwehr-2.jpg"
+        "image": "data/pgw/Palmengartenwehr-2.jpg",
+        "label": "Palmengartenwehr Situation 2"
     },
     {
         "sound": "data/pgw/looped_Palmengartenwehr-3.mp3",
-        "image": "data/pgw/Palmengartenwehr-3.jpg"
+        "image": "data/pgw/Palmengartenwehr-3.jpg",
+        "label": "Palmengartenwehr Situation 3"
     },
     {
         "sound": "data/mfd/looped_Heidelberger_Tiegel_1.MP3",
-        "image": "data/mfd/Heidelberger_Tiegel_1.jpg"
+        "image": "data/mfd/Heidelberger_Tiegel_1.jpg",
+        "label": "Heidelberger Tiegel 1"
     },
     {
         "sound": "data/mfd/looped_Heidelberger_Tiegel_2.MP3",
-        "image": "data/mfd/Heidelberger_Tiegel_2.jpg"
+        "image": "data/mfd/Heidelberger_Tiegel_2.jpg",
+        "label": "Heidelberger Tiegel 2"
     },
     {
         "sound": "data/mfd/looped_Heidelberger_Tiegel_3.MP3",
-        "image": "data/mfd/Heidelberger_Tiegel_3.jpg"
+        "image": "data/mfd/Heidelberger_Tiegel_3.jpg",
+        "label": "Heidelberger Tiegel 3"
     },
     {
         "sound": "data/mfd/looped_Heidelberger_Tiegel_4.MP3",
-        "image": "data/mfd/Heidelberger_Tiegel_4.jpg"
+        "image": "data/mfd/Heidelberger_Tiegel_4.jpg",
+        "label": "Heidelberger Tiegel 4"
     },
     {
         "sound": "data/mfd/looped_Heidelberger_Tiegel_5.MP3",
-        "image": "data/mfd/Heidelberger_Tiegel_5.jpg"
+        "image": "data/mfd/Heidelberger_Tiegel_5.jpg",
+        "label": "Heidelberger Tiegel 5"
     },
     {
         "sound": "data/mfd/looped_Heidelberger_Tiegel_6.MP3",
-        "image": "data/mfd/Heidelberger_Tiegel_6.jpg"
+        "image": "data/mfd/Heidelberger_Tiegel_6.jpg",
+        "label": "Heidelberger Tiegel 6"
     },
     {
         "sound": "data/mfd/looped_MAN_1.MP3",
-        "image": "data/mfd/MAN_1.jpg"
+        "image": "data/mfd/MAN_1.jpg",
+        "label": "MAN 1"
     },
     {
         "sound": "data/mfd/looped_MAN_2.MP3",
-        "image": "data/mfd/MAN_2.jpg"
+        "image": "data/mfd/MAN_2.jpg",
+        "label": "MAN 2"
     },
     {
         "sound": "data/mfd/looped_MAN_3.MP3",
-        "image": "data/mfd/MAN_3.jpg"
+        "image": "data/mfd/MAN_3.jpg",
+        "label": "MAN 3"
     },
     {
         "sound": "data/mfd/looped_MAN_4.MP3",
-        "image": "data/mfd/MAN_4.jpg"
+        "image": "data/mfd/MAN_4.jpg",
+        "label": "MAN 4"
     },
     {
         "sound": "data/mfd/looped_Victoria_Front_Gudrun.MP3",
-        "image": "data/mfd/Victoria_Front_Gudrun.jpg"
+        "image": "data/mfd/Victoria_Front_Gudrun.jpg",
+        "label": "Victoria Front Gudrun"
     }
 ]

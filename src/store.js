@@ -12,6 +12,7 @@ function reducer(state, action) {
           temp[action.id] = Object.assign({}, action.css)
           return Object.assign({}, state, { layer_css: temp })
         case 'LAYER_SETAUDIO':
+          action.audio.volume = 1.0
           temp = Object.assign({}, state.layer_audio)
           temp[action.id] = action.audio
           return Object.assign({}, state, { layer_audio: temp })
@@ -19,7 +20,8 @@ function reducer(state, action) {
             // console.log("setting "+action.audiourls)
             return Object.assign({}, state, {
                 audiourls: action.audiourls,
-                imageurls: action.imageurls
+                imageurls: action.imageurls,
+                audiolabels: action.audiolabels
             })
         case "HIDE_SPLASH":
             console.log("hiding")
@@ -35,8 +37,18 @@ function reducer(state, action) {
             return Object.assign({}, state, { mode: temp } )
         case "SET_LAYERS":
             return Object.assign({}, state, {
-              layers: action.layers
+              nol: action.nol
             })
+        case "SET_STARTTIME":
+            return Object.assign({}, state, { starttime: action.ms } )
+        case "LAYER_SETNEXTTIME":
+            temp = Object.assign({}, state.layer_nexttime)
+            temp[action.id] = action.nexttime
+            return Object.assign({}, state, {layer_nexttime: temp})
+        case "LAYER_SETLABEL":
+            temp = Object.assign({}, state.layer_label)
+            temp[action.id] = action.label
+            return Object.assign({}, state, {layer_label: temp})
         default:
             {
                 return state
@@ -45,16 +57,18 @@ function reducer(state, action) {
 }
 
 const initial_state = {
+    starttime:0,
     mode: {
         'screen':0,
         'text':0,
         'play':0
     },
     splashstyle: {display:'flex'},
-    layer_frames: {},
     layer_css: {},
     layer_audio: {},
-    layers: 0
+    layer_nexttime: {},
+    layer_label: {},
+    nol: 0
 }
 
 const enhancers = compose(
