@@ -82,7 +82,7 @@
 
 .statspct {
   height:4vh;
-  background-color:#555;
+  background-color:#222a;
   text-align:left;
   overflow:visible;
   white-space: nowrap;
@@ -91,7 +91,7 @@
 
 .statsvol {
   height:4vh;
-  background-color:#333;
+  background-color:#444a;
   text-align:left;
   overflow:visible;
   white-space: nowrap;

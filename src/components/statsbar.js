@@ -25,16 +25,9 @@ class Statsbar extends Component {
 
 function mapStateToProps(state, ownProps) {
     return {
-        mode: state.mode,
-        layers: state.layers,
-        all_audiourls: state.audiourls,
-        all_imageurls: state.imageurls,
-        all_audiolabels: state.audiolabels,
-        css: state.layer_css[ownProps.id],
-        audio: state.layer_audio[ownProps.id],
+        css: state.layer_css[ownProps.id], // only need to trigger update
         nexttime: state.layer_nexttime[ownProps.id],
         label: state.layer_label[ownProps.id],
-        nol: state.nol,
         id: ownProps.id
     }
 }
