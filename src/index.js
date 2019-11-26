@@ -10,6 +10,12 @@ import store from './store'
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.register();
 
+Number.prototype.pad = function(size) {
+  var s = String(this);
+  while (s.length < (size || 2)) {s = "0" + s;}
+  return s;
+}
+
 render(
     <Provider store={store}>
         <App nol={3} />

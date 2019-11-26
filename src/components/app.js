@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import store from '../store'
 import Layer from './layer.js'
+import Statsbar from './statsbar.js'
 import content from './content.js'
 import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -24,6 +25,7 @@ class App extends Component {
             console.log(event)
             store.dispatch({type:'HIDE_SPLASH'})
             store.dispatch({type:'SET_MODE', mode: { 'play':1 } })
+            store.dispatch({type:'SET_STARTTIME', ms:Math.round((new Date()).getTime()) } )
             event.stopPropagation()
         }
     }
@@ -124,14 +126,9 @@ class App extends Component {
 
         if(state.imageurls) {
           for (var i=0;i<this.props.nol;i++) {
-            layers.push(<Layer id={i} key={i.toString()} />)
+            layers.push(<Layer id={i} key={"l"+i.toString()} />)
           }
         }
-
-        // <FontAwesomeIcon icon={faStop} />
-        // <FontAwesomeIcon icon={faInfo} />
-        // <FontAwesomeIcon icon={faCompressArrowsAlt} />
-        // <FontAwesomeIcon icon={faExpandArrowsAlt} />
 
     var button_play=false
     var app_style={backgroundColor:'#111'}
@@ -163,12 +160,12 @@ class App extends Component {
         <button onClick={this.handleInfoButton} className="sbBig">
             <FontAwesomeIcon icon={faInfoCircle} />
         </button>
-        <button onClick={this.handleCloseButton} className="sbBig">
-            <FontAwesomeIcon icon={faTimesCircle} />
-        </button>
-        <br />
         <button onClick={this.handleChartButton} className="sbBig">
             <FontAwesomeIcon icon={faChartBar} />
+        </button>
+        <br />
+        <button onClick={this.handleCloseButton} className="sbBig">
+            <FontAwesomeIcon icon={faTimesCircle} />
         </button>
     </div>
 
@@ -181,17 +178,13 @@ class App extends Component {
         </button>
     </div>
 
-    var splash_charts = []
-    var percent = 0
-    if(this.props.mode['play']>0) {
-      var now = (new Date()).getTime()
-      for (var i=0;i<this.props.nol;i++) {
-        percent = Math.round((this.props.nexttime[i]-now)/600)
-        splash_charts.push(<p>{this.props.layer_label[i]} {percent} %</p>)
-      }
-    }
-    splash_charts =<div>
-      {splash_charts}
+    var runtime = Math.round((new Date()).getTime())-this.props.starttime
+    var splash_charts = <div>
+      <Statsbar id={0} key={"s0"} />
+      <Statsbar id={1} key={"s1"} />
+      <Statsbar id={2} key={"s2"} />
+      <br />
+        Time: {(Math.floor(runtime/60000)).pad(2)} min {(Math.floor((runtime/1000)%60)).pad(2)} sec
       <br />
       <button onClick={this.handleCloseButton} className="sbBig">
           <FontAwesomeIcon icon={faTimesCircle} />
@@ -220,6 +213,7 @@ class App extends Component {
 
 function mapStateToProps(state, ownProps) {
     return {
+        starttime: state.starttime,
         mode: state.mode,
         audiourls: state.audiourls,
         images: state.images,

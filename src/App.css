@@ -74,3 +74,26 @@
     z-index:2100;
     filter: drop-shadow(0 0px 16px #ccc);
 }
+
+.statsbar {
+  width:40vh;
+  margin-bottom: 5vh;
+}
+
+.statspct {
+  height:4vh;
+  background-color:#555;
+  text-align:left;
+  overflow:visible;
+  white-space: nowrap;
+  padding:0px 4px;
+}
+
+.statsvol {
+  height:4vh;
+  background-color:#333;
+  text-align:left;
+  overflow:visible;
+  white-space: nowrap;
+  padding:0px 4px;
+}
