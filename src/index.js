@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import * as serviceWorker from './serviceWorker'
+import * as serviceWorker from './serviceWorker.js'
 import App from './components/app.js'
 import store from './store'
 
