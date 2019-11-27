@@ -274,11 +274,6 @@
         "label": "Container Terminal at the Port of Dortmund"
     },
     {
-        "sound": "data/lwl/looped_55e409ef55c47.mp3",
-        "image": "data/lwl/Coffee-grinder-204x136.jpg",
-        "label": "Coffee grinder"
-    },
-    {
         "sound": "data/lwl/looped_55e41e5863da1.mp3",
         "image": "data/lwl/Button-sewing-machine-204x136.jpg",
         "label": "Button sewing machine"
@@ -307,11 +302,6 @@
         "sound": "data/lwl/looped_55e431c2bbb5d.mp3",
         "image": "data/lwl/Rope-making-machine-204x136.jpg",
         "label": "Rope making machine"
-    },
-    {
-        "sound": "data/lwl/looped_55e435944c58c.mp3",
-        "image": "data/lwl/Chain-forging-204x136.jpg",
-        "label": "Chain forging"
     },
     {
         "sound": "data/lwl/looped_55e439f33a3bd.mp3",
