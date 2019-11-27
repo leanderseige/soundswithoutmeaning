@@ -8,10 +8,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Get the source code and all data:
-#### `git clone https://github.com/leanderseige/soundswithoutmeaning`
+### `git clone https://github.com/leanderseige/soundswithoutmeaning`
 
 Install dependencies:
-#### `npm install`
+### `npm install`
 
 Run the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
