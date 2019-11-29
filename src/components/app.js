@@ -20,6 +20,11 @@ class App extends Component {
                 this.props.layer_audio[n].src = "data/silence.mp3"
                 this.props.layer_audio[n].play()
                 store.dispatch({type:'LAYER_SETLABEL', id:n, label:"Silence"})
+                // we opportunistically use this loop to (re)set timing
+                store.dispatch({type:'LAYER_SETNEXTTIME',
+                  id:n,
+                  nexttime:(60000/this.props.nol)*n+(new Date()).getTime()
+                })
             }
             console.log("Go!")
             console.log(event)

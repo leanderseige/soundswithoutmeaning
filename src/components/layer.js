@@ -53,7 +53,7 @@ class Layer extends Component {
       id:this.props.id,
       css: { zIndex : (this.props.id+1) }
     })
-    setInterval(this.mainloop, 250)
+    setInterval(this.mainloop, 40)
   }
 
   render() {
