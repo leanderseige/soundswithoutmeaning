@@ -2,11 +2,13 @@ import React from 'react'
 
 const content = {
     0:  <div>
-            <h1>sounds without meaning</h1><br />
-            please use your headphones<br />
-            <br />
-            concentrate and relax<br />
-            <br />
+            <h1>sounds without meaning</h1>
+            <p className="bigger1">
+            please use your headphones
+            </p>
+            <p className="bigger2">
+            concentrate and relax
+            </p>
         </div>,
     1:  <div>
             <h2>Sounds and Images</h2>
