@@ -1,6 +1,6 @@
 # sounds without meaning
 
-...
+![screenshot](public/swom-illustration.png)
 
 
 ## Source Code

@@ -97,3 +97,7 @@
   white-space: nowrap;
   padding:0px 4px;
 }
+
+.small {
+    font-size: 1.8vh;
+}
