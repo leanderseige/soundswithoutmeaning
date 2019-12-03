@@ -179,11 +179,6 @@
         "label": "Slit machine"
     },
     {
-        "sound": "data/lwl/looped_548ea21cec72e.mp3",
-        "image": "data/lwl/Fireman-stoker-at-work-in-a-steam-locomotive-204x136.jpg",
-        "label": "Fireman (stoker) at work in a steam locomotive"
-    },
-    {
         "sound": "data/lwl/looped_548eab3ea5c96.mp3",
         "image": "data/lwl/Air-pump-steam-locomotive-204x136.jpg",
         "label": "Air pump (steam locomotive)"
@@ -327,11 +322,6 @@
         "sound": "data/lwl/looped_55e596973ee59.mp3",
         "image": "data/lwl/Loom1-204x136.jpg",
         "label": "Loom"
-    },
-    {
-        "sound": "data/lwl/looped_55e5a271cf7cb.mp3",
-        "image": "data/lwl/Pneumatic-pick-204x136.jpg",
-        "label": "Pneumatic pick"
     },
     {
         "sound": "data/lwl/looped_55e5a44a3e762.mp3",
