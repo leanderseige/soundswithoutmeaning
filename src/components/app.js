@@ -172,7 +172,6 @@ class App extends Component {
         <button onClick={this.handleCloseButton} className="sbBig">
             <FontAwesomeIcon icon={faTimesCircle} />
         </button>
-        <h2>https:&#x2F;&#x2F;swom.app</h2>
     </div>
 
     var splash_info =
