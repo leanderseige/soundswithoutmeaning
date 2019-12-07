@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import store from '../store'
-import Layer from './layer.js'
+// import Layer from './layer.js'
+import DLayer from './dlayer.js'
 import Statsbar from './statsbar.js'
 import content from './content.js'
 import '../App.css';
@@ -127,92 +128,94 @@ class App extends Component {
     render() {
         const state = store.getState()
 
-        const layers = []
+        // const layers = []
+        //
+        // if(state.imageurls) {
+        //   for (var i=0;i<this.props.nol;i++) {
+        //     layers.push(<Layer id={i} key={"l"+i.toString()} />)
+        //   }
+        // }
 
-        if(state.imageurls) {
-          for (var i=0;i<this.props.nol;i++) {
-            layers.push(<Layer id={i} key={"l"+i.toString()} />)
-          }
+        const layers = <DLayer />
+
+        var button_play=false
+        var app_style={backgroundColor:'#111'}
+        if(this.props.mode['play']===1) {
+            button_play= <FontAwesomeIcon icon={faStop} />
+            app_style={backgroundColor:'#111'}
+        } else{
+            button_play= <FontAwesomeIcon icon={faPlay} />
+            app_style={backgroundColor:'#111'}
         }
 
-    var button_play=false
-    var app_style={backgroundColor:'#111'}
-    if(this.props.mode['play']===1) {
-        button_play= <FontAwesomeIcon icon={faStop} />
-        app_style={backgroundColor:'#111'}
-    } else{
-        button_play= <FontAwesomeIcon icon={faPlay} />
-        app_style={backgroundColor:'#111'}
-    }
+        var button_screen=false
+        if(this.props.mode['screen']===1) {
+            button_screen= <FontAwesomeIcon icon={faCompressArrowsAlt} />
+        } else{
+            button_screen= <FontAwesomeIcon icon={faExpandArrowsAlt} />
+        }
 
-    var button_screen=false
-    if(this.props.mode['screen']===1) {
-        button_screen= <FontAwesomeIcon icon={faCompressArrowsAlt} />
-    } else{
-        button_screen= <FontAwesomeIcon icon={faExpandArrowsAlt} />
-    }
+        var splash_menu =
+        <div>
+            {content[0]}
+            <button onClick={this.handleStartButton} className="sbVeryBig">
+                {button_play}
+            </button>
+            <br />
+            <button onClick={this.goFullscreen} className="sbBig">
+                {button_screen}
+            </button>
+            <button onClick={this.handleInfoButton} className="sbBig">
+                <FontAwesomeIcon icon={faInfoCircle} />
+            </button>
+            <button onClick={this.handleChartButton} className="sbBig">
+                <FontAwesomeIcon icon={faChartBar} />
+            </button>
+            <br />
+            <button onClick={this.handleCloseButton} className="sbBig">
+                <FontAwesomeIcon icon={faTimesCircle} />
+            </button>
+        </div>
 
-    var splash_menu =
-    <div>
-        {content[0]}
-        <button onClick={this.handleStartButton} className="sbVeryBig">
-            {button_play}
-        </button>
-        <br />
-        <button onClick={this.goFullscreen} className="sbBig">
-            {button_screen}
-        </button>
-        <button onClick={this.handleInfoButton} className="sbBig">
-            <FontAwesomeIcon icon={faInfoCircle} />
-        </button>
-        <button onClick={this.handleChartButton} className="sbBig">
-            <FontAwesomeIcon icon={faChartBar} />
-        </button>
-        <br />
-        <button onClick={this.handleCloseButton} className="sbBig">
-            <FontAwesomeIcon icon={faTimesCircle} />
-        </button>
-    </div>
+        var splash_info =
+        <div>
+            {content[1]}
+            <br />
+            <button onClick={this.handleCloseButton} className="sbBig">
+                <FontAwesomeIcon icon={faTimesCircle} />
+            </button>
+        </div>
 
-    var splash_info =
-    <div>
-        {content[1]}
-        <br />
-        <button onClick={this.handleCloseButton} className="sbBig">
-            <FontAwesomeIcon icon={faTimesCircle} />
-        </button>
-    </div>
+        var runtime = Math.round((new Date()).getTime())-this.props.starttime
+        var splash_charts = <div>
+            <Statsbar id={0} key={"s0"} />
+            <Statsbar id={1} key={"s1"} />
+            <Statsbar id={2} key={"s2"} />
+            <br />
+            Time: {(Math.floor(runtime/60000)).pad(2)} min {(Math.floor((runtime/1000)%60)).pad(2)} sec
+            <br />
+            <button onClick={this.handleCloseButton} className="sbBig">
+                <FontAwesomeIcon icon={faTimesCircle} />
+            </button>
+        </div>
 
-    var runtime = Math.round((new Date()).getTime())-this.props.starttime
-    var splash_charts = <div>
-      <Statsbar id={0} key={"s0"} />
-      <Statsbar id={1} key={"s1"} />
-      <Statsbar id={2} key={"s2"} />
-      <br />
-        Time: {(Math.floor(runtime/60000)).pad(2)} min {(Math.floor((runtime/1000)%60)).pad(2)} sec
-      <br />
-      <button onClick={this.handleCloseButton} className="sbBig">
-          <FontAwesomeIcon icon={faTimesCircle} />
-      </button>
-    </div>
+        var splash_content = false
+        if(this.props.mode['text']===1) {
+            splash_content = splash_info
+        } else if (this.props.mode['text']===2) {
+            splash_content = splash_charts
+        } else {
+            splash_content = splash_menu
+        }
 
-    var splash_content = false
-    if(this.props.mode['text']===1) {
-        splash_content = splash_info
-    } else if (this.props.mode['text']===2) {
-        splash_content = splash_charts
-    } else {
-        splash_content = splash_menu
-    }
-
-      return (
+        return (
         <div className="App" onClick={this.shieldClick} style={app_style} >
             {layers}
             <div style={state.splashstyle} className="splash_container">
                 {splash_content}
             </div>
         </div>
-      )
+        )
     }
 }
 
