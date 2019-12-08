@@ -9,14 +9,22 @@ class DLayer extends Component {
     if(this.props.mode['play']===0) {
       return
     }
+    var newcss={}
+    var csschanged = false
     for (var i=0;i<this.props.nol;i++) {
+        if(this.props.restartflag[i]===true) {
+            store.dispatch({type:'LAYER_RESTARTFLAG',
+              id: i ,
+              flag: false
+            })
+        }
+        newcss[i] = Object.assign({},this.props.css[i])
         // let's calculate our timing
         var now = (new Date()).getTime()
         var reltime = this.props.nexttime[i] - now
         // prepare new css object
-        var newcss = Object.assign({},this.props.css[i])
         // are we past the deadline? load new medium then
-        if( reltime <= 0 ){
+        if( reltime <= 0 ) {
           // reset relative time and set next deadline
           reltime = 60000 + reltime
           store.dispatch({type:'LAYER_SETNEXTTIME',
@@ -26,15 +34,26 @@ class DLayer extends Component {
           var randitem = Math.floor(Math.random() * Object.keys(this.props.all_imageurls).length)
           var toplay = this.props.all_imageurls[randitem]
           console.log(i+" "+Math.round((new Date()).getTime() / 1000)+" playing "+toplay)
-          newcss['backgroundImage'] = 'url(' + toplay + ')'
-          this.props.audio[i].src=this.props.all_audiourls[randitem]
-          this.props.audio[i].loop=true
-          this.props.audio[i].play()
+          newcss[i]['backgroundImage'] = 'url(' + toplay + ')'
+          csschanged=true
+          store.dispatch({type:'LAYER_RESTARTFLAG',
+            id: i ,
+            flag: true
+          })
+          try {
+              // this.props.audio[i].stop()
+              console.log("Setting: "+this.props.all_audiourls[randitem])
+              this.props.audio[i].src=this.props.all_audiourls[randitem]
+              this.props.audio[i].loop=true
+              this.props.audio[i].play()
+          } catch(e) {
+              console.log(e)
+          }
           var label = this.props.all_audiolabels[randitem]
           store.dispatch({type:'LAYER_SETLABEL', id: i, label:label})
         }
-        var scale = (30000-Math.abs((30000-reltime)))/30000
-        newcss['opacity'] = scale
+    }
+    if(csschanged) {
         store.dispatch({type:'LAYER_SETCSS', id: i, css:newcss})
     }
   }
@@ -42,6 +61,7 @@ class DLayer extends Component {
   constructor(props) {
     super(props)
     this.mainloop = this.mainloop.bind(this);
+    var css = {}
     for (var i=0;i<this.props.nol;i++) {
         store.dispatch({type:'LAYER_SETNEXTTIME',
           id: i ,
@@ -51,21 +71,33 @@ class DLayer extends Component {
           id: i ,
           audio:new Audio()
         })
-        store.dispatch({type:'LAYER_SETCSS',
+        store.dispatch({type:'LAYER_RESTARTFLAG',
           id: i ,
-          css: { zIndex : ( i +1) }
+          flag: false
         })
+        css[i]={}
+        css[i]['zIndex']=i+1
     }
-    setInterval(this.mainloop, 150)
+    store.dispatch({type:'LAYER_SETCSS',
+      id: i ,
+      css: css
+    })
+    setInterval(this.mainloop, 250)
   }
 
     render() {
         const layers = []
 
         for (var i=0;i<this.props.nol;i++) {
-          layers.push(
-              <div id={i} key={"l"+i.toString()} style={this.props.css[i]} className="layer">{i}</div>
-            )
+            if(this.props.restartflag[i]===true) {
+                layers.push(
+                    <div id={i} key={"l"+i.toString()} style={this.props.css[i]} className="layer_off">{i}</div>
+                )
+            } else {
+                layers.push(
+                    <div id={i} key={"l"+i.toString()} style={this.props.css[i]} className="layer">{i}</div>
+                )
+            }
         }
 
         return (
@@ -84,6 +116,7 @@ function mapStateToProps(state, ownProps) {
         css: state.layer_css,
         audio: state.layer_audio,
         nexttime: state.layer_nexttime,
+        restartflag: state.layer_restartflag,
         nol: state.nol
     }
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import store from '../store'
-// import Layer from './layer.js'
 import DLayer from './dlayer.js'
 import Statsbar from './statsbar.js'
 import content from './content.js'
@@ -29,7 +28,8 @@ class App extends Component {
             }
             console.log("Go!")
             console.log(event)
-            store.dispatch({type:'HIDE_SPLASH'})
+            this.setState( { wmode_splash : 0 } )
+            // store.dispatch({type:'HIDE_SPLASH'})
             store.dispatch({type:'SET_MODE', mode: { 'play':1 } })
             store.dispatch({type:'SET_STARTTIME', ms:Math.round((new Date()).getTime()) } )
             event.stopPropagation()
@@ -38,22 +38,27 @@ class App extends Component {
 
     shieldClick(event) {
         console.log("shield click")
-        store.dispatch({type:'SHOW_SPLASH'})
+        this.setState( { wmode_splash : 1 } )
+        // store.dispatch({type:'SHOW_SPLASH'})
     }
 
     handleInfoButton(event) {
-        store.dispatch({type:'SET_MODE', mode: { 'text':1 } })
+        this.setState( { wmode_text : 1 } )
+        // store.dispatch({type:'SET_MODE', mode: { 'text':1 } })
         event.stopPropagation()
     }
 
     handleChartButton(event) {
-        store.dispatch({type:'SET_MODE', mode: { 'text':2 } })
+        this.setState( { wmode_text : 2 } )
+        // store.dispatch({type:'SET_MODE', mode: { 'text':2 } })
         event.stopPropagation()
     }
 
     handleCloseButton(event) {
-        store.dispatch({type:'SET_MODE', mode: { 'text':0 } })
-        store.dispatch({type:'HIDE_SPLASH'})
+        this.setState( { wmode_text : 0 } )
+        // store.dispatch({type:'SET_MODE', mode: { 'text':0 } })
+        this.setState( { wmode_splash : 0 } )
+        // store.dispatch({type:'HIDE_SPLASH'})
         event.stopPropagation()
     }
 
@@ -120,32 +125,30 @@ class App extends Component {
                 }
             )
         this.handleStartButton = this.handleStartButton.bind(this)
+        this.handleCloseButton = this.handleCloseButton.bind(this)
+        this.handleInfoButton = this.handleInfoButton.bind(this)
+        this.handleChartButton = this.handleChartButton.bind(this)
         this.shieldClick = this.shieldClick.bind(this)
         this.goFullscreen = this.goFullscreen.bind(this)
+        this.state = { wmode_splash : 1 }
+    }
 
+    componentDidMont() {
+        this.setState( { wmode_text : 1 } )
+        this.setState( { wmode_splash : 1 } )
     }
 
     render() {
         const state = store.getState()
 
-        // const layers = []
-        //
-        // if(state.imageurls) {
-        //   for (var i=0;i<this.props.nol;i++) {
-        //     layers.push(<Layer id={i} key={"l"+i.toString()} />)
-        //   }
-        // }
-
-        const layers = <DLayer />
+        var layers = <DLayer />
 
         var button_play=false
         var app_style={backgroundColor:'#111'}
         if(this.props.mode['play']===1) {
             button_play= <FontAwesomeIcon icon={faStop} />
-            app_style={backgroundColor:'#111'}
         } else{
             button_play= <FontAwesomeIcon icon={faPlay} />
-            app_style={backgroundColor:'#111'}
         }
 
         var button_screen=false
@@ -187,6 +190,7 @@ class App extends Component {
         </div>
 
         var runtime = Math.round((new Date()).getTime())-this.props.starttime
+
         var splash_charts = <div>
             <Statsbar id={0} key={"s0"} />
             <Statsbar id={1} key={"s1"} />
@@ -200,21 +204,31 @@ class App extends Component {
         </div>
 
         var splash_content = false
-        if(this.props.mode['text']===1) {
+        if(this.state.wmode_text===1) {
             splash_content = splash_info
-        } else if (this.props.mode['text']===2) {
+        } else if (this.state.wmode_text===2) {
             splash_content = splash_charts
         } else {
             splash_content = splash_menu
         }
 
-        return (
-        <div className="App" onClick={this.shieldClick} style={app_style} >
-            {layers}
-            <div style={state.splashstyle} className="splash_container">
+        console.log("wmode_splash: "+this.state.wmode_splash)
+        if(this.state.wmode_splash > 0) {
+            var splash_screen =
+            <div style={{display:"flex"}} className="splash_container">
                 {splash_content}
             </div>
-        </div>
+        } else {
+            var splash_screen =
+            <div style={{display:"none"}} className="splash_container">
+            </div>
+        }
+
+        return (
+            <div className="App" onClick={this.shieldClick} style={app_style} >
+                {layers}
+                {splash_screen}
+            </div>
         )
     }
 }

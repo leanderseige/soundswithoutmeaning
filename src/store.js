@@ -8,8 +8,11 @@ function reducer(state, action) {
           temp[action.id]=action.frames
           return Object.assign({}, state, { layer_frames: temp })
         case 'LAYER_SETCSS':
-          temp = Object.assign({}, state.layer_css)
-          temp[action.id] = Object.assign({}, action.css)
+            temp = Object.assign({}, state.layer_css)
+            for (var i=0;i<state.nol;i++) {
+                temp[i] = Object.assign({}, state.layer_css[i], action.css[i])
+            }
+          // temp[action.id] = Object.assign({}, action.css)
           return Object.assign({}, state, { layer_css: temp })
         case 'LAYER_SETAUDIO':
           action.audio.volume = 1.0
@@ -49,6 +52,10 @@ function reducer(state, action) {
             temp = Object.assign({}, state.layer_label)
             temp[action.id] = action.label
             return Object.assign({}, state, {layer_label: temp})
+        case "LAYER_RESTARTFLAG":
+            temp = Object.assign({}, state.layer_restartflag)
+            temp[action.id] = action.flag
+            return Object.assign({}, state, {layer_restartflag: temp})
         default:
             {
                 return state
@@ -68,6 +75,7 @@ const initial_state = {
     layer_audio: {},
     layer_nexttime: {},
     layer_label: {},
+    layer_restartflag: {},
     nol: 0
 }
 
