@@ -4,23 +4,30 @@ import store from '../store'
 
 class Statsbar extends Component {
 
-  render() {
-    var now = (new Date()).getTime()
-    var percent = Math.round((this.props.nexttime-now)/600)
-    var volume = (50-Math.abs(50-percent))*2
+    componentDidMount() {
+        this.interval = setInterval(() => this.setState({ time: Date.now() }), 500);
+    }
 
-    var pct_style={width:(percent*2).toString()+"px"}
-    var vol_style={width:(volume*2).toString()+"px"}
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
 
-    return (
-      <div className="statsbar">
-        <h3>{this.props.label}</h3>
-        <div className="statsvol" style={vol_style}>Volume: {volume} %</div>
-        <div className="statspct" style={pct_style}>Time: {percent} %</div>
-      </div>
-    )
-  }
+    render() {
+        var now = (new Date()).getTime()
+        var percent = Math.round((this.props.nexttime-now)/600)
+        var volume = (50-Math.abs(50-percent))*2
 
+        var pct_style={width:(percent*2).toString()+"px"}
+        var vol_style={width:(volume*2).toString()+"px"}
+
+        return (
+            <div className="statsbar">
+                <h3>{this.props.label}</h3>
+                <div className="statsvol" style={vol_style}>Volume: {volume} %</div>
+                <div className="statspct" style={pct_style}>Time: {percent} %</div>
+            </div>
+        )
+     }
 }
 
 function mapStateToProps(state, ownProps) {

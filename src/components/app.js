@@ -43,6 +43,7 @@ class App extends Component {
     }
 
     handleInfoButton(event) {
+        console.log("info click")
         this.setState( { wmode_text : 1 } )
         // store.dispatch({type:'SET_MODE', mode: { 'text':1 } })
         event.stopPropagation()
@@ -55,6 +56,7 @@ class App extends Component {
     }
 
     handleCloseButton(event) {
+        console.log("close click")
         this.setState( { wmode_text : 0 } )
         // store.dispatch({type:'SET_MODE', mode: { 'text':0 } })
         this.setState( { wmode_splash : 0 } )
@@ -139,6 +141,7 @@ class App extends Component {
     }
 
     render() {
+        console.log("start render")
         const state = store.getState()
 
         var layers = <DLayer />
@@ -215,12 +218,12 @@ class App extends Component {
         console.log("wmode_splash: "+this.state.wmode_splash)
         if(this.state.wmode_splash > 0) {
             var splash_screen =
-            <div style={{display:"flex"}} className="splash_container">
+            <div style={{display:"flex",willChange:"transform"}} className="splash_container">
                 {splash_content}
             </div>
         } else {
             var splash_screen =
-            <div style={{display:"none"}} className="splash_container">
+            <div style={{display:"none",willChange:"transform"}} className="splash_container">
             </div>
         }
 
