@@ -8,6 +8,10 @@ Sounds without meaning uses simple algorithms to compose an infinite stream of a
 
 Sounds without meaning was developed in Javascript on the basis of the React Framework and runs directly in the web browser. It is a Progressive Web App (PWA) that can also be installed locally on compatible devices. Data of the LWL-Industriemuseum, the Museum für Druckkunst Leipzig and own data of the author were used. All data and the software are available under free licenses.
 
+![award](swom-cdvwest-award.png)
+
+Sounds without meaning was awarded the audience award "everybody's darling" at the open cultural data hackathon Coding da Vinci West: https://codingdavinci.de/events/westfalen-ruhrgebiet/.
+
 ## Data
 
 Subfolders \*/lwl/\*: CC BY 4.0 by LWL-Industriemuseum and Person, who made the recording / photograph, source: https://codingdavinci.de/daten/#lwl-industriemuseum
