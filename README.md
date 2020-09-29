@@ -10,7 +10,7 @@ Sounds without meaning was developed in Javascript on the basis of the React Fra
 
 ![award](swom-cdvwest-award.png)
 
-Sounds without meaning was awarded the audience award "everybody's darling" at the open cultural data hackathon Coding da Vinci West: https://codingdavinci.de/events/westfalen-ruhrgebiet/.
+Sounds without meaning was [awarded the audience award "everybody's darling"](https://codingdavinci.de/de/projekte/sounds-without-meaning) at the open cultural data hackathon Coding da Vinci West: https://codingdavinci.de/de/events/westfalen-ruhrgebiet-2019.
 
 ## Data
 
