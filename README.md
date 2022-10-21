@@ -38,6 +38,6 @@ Build the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.<br />
 **`npm run build`**
 
-## Hidden Tip
+## Hidden Link
 
 If you're interested in some of my more conscious hardware-based audio experiments, you can find some on Soundcloud. But be warned: everything is pretty raw and may not find listeners' expectations: https://soundcloud.com/mjkls

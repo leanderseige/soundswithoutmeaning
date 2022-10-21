@@ -25,6 +25,9 @@ const content = {
             All Details:<br />
             <a href="https://github.com/leanderseige/soundswithoutmeaning" target="_blank" rel="noopener noreferrer">https://github.com/leanderseige/soundswithoutmeaning</a><br />
             </p>
+            <p>
+            If you're interested in some of my more conscious hardware-based audio experiments, you can find some on Soundcloud. But be warned: everything is pretty raw and may not find listeners' expectations: https://soundcloud.com/mjkls
+            </p>
         </div>
 
 }
