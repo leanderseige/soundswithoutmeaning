@@ -12,6 +12,12 @@ Sounds without meaning was developed in Javascript on the basis of the React Fra
 
 Sounds without meaning was [awarded the audience award "everybody's darling"](https://codingdavinci.de/de/projekte/sounds-without-meaning) at the open cultural data hackathon Coding da Vinci West: https://codingdavinci.de/de/events/westfalen-ruhrgebiet-2019.
 
+## Video
+
+German Presentation Video: https://www.youtube.com/watch?v=-guQb0m00_Y
+
+[![Mein Video](https://img.youtube.com/vi/-guQb0m00_Y/3.jpg)](https://www.youtube.com/watch?v=-guQb0m00_Y)
+
 ## Data
 
 Subfolders \*/lwl/\*: CC BY 4.0 by LWL-Industriemuseum and Person, who made the recording / photograph, source: https://codingdavinci.de/daten/#lwl-industriemuseum
